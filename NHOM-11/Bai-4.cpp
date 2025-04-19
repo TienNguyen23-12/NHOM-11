@@ -44,18 +44,12 @@ void BellmanFord(ll a[][INF], ll n, ll s)
             }
         }
     }
-    
-    truoc[0] = -1;
 
     for (ll v = 0; v < n; ++v) 
 	{
         cout << "d[" << v << "] = ";
-        if (d[v] >= INF) cout << INF;
-        else 
-        {
-        	if(d[v] < 0) cout << d[v];
-        	else cout << ' ' << d[v];
-		}
+        if (d[v] >= INF) cout << setw(3) << INF;
+        else cout << setw(3) << d[v];
         cout << " | Duong di tu " << s << " den " << v << ": " ;
         if (d[v] < INF && truoc[v] != -1) print_res(v, truoc);
         cout << "\n";

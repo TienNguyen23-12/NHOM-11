@@ -75,8 +75,8 @@ void Dijkstra(ll a[][INF], ll n, ll s)
     for (ll v = 0; v < n; ++v) 
 	{
         cout << "d[" << v << "] = ";
-        if (d[v] >= INF) cout << "INF";
-        else cout << d[v];
+        if (d[v] >= INF) cout << setw(3) << INF;
+        else cout << setw(3) << d[v];
         cout << " | Duong di tu " << s << " den " << v << ": " ;
         if (d[v] < INF) print_res(v, truoc);
         cout << "\n";

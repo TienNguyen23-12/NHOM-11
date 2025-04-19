@@ -3,8 +3,9 @@ using namespace std;
 #define ll long long
 
 ll n;
+vector<vector<ll>> adj;
 
-void treo(const vector<vector<ll>>& adj)
+void treo()
 {
 	for (ll i = 0; i < n; ++i) 
 	{
@@ -15,7 +16,7 @@ void treo(const vector<vector<ll>>& adj)
     cout << "\n";
 }
 
-void colap(const vector<vector<ll>> &adj)
+void colap()
 {
 	for (ll i = 0; i < n; ++i) 
 	{
@@ -26,7 +27,7 @@ void colap(const vector<vector<ll>> &adj)
     cout << "\n";
 }
 
-void songsong(const vector<vector<ll>> &adj)
+void songsong()
 {
 	for (ll i = 0; i < n; ++i)
 	{
@@ -50,17 +51,18 @@ int main()
 	cin.tie(0);
 
 	cin >> n;
-	vector<vector<ll>> adj(n, vector<ll>(n));
+	adj.resize(n, vector<ll>(n));
+	
 	for (ll i = 0; i < n; ++i) for (ll j = 0; j < n; ++j) cin >> adj[i][j];
 	
 	cout << "Dinh treo: ";
-	treo(adj);
+	treo();
 	
 	cout << "Dinh co lap: ";
-	colap(adj);
+	colap();
 	
 	cout << "Cap dinh co canh //: ";
-	songsong(adj);
+	songsong();
 	
 	
 	
